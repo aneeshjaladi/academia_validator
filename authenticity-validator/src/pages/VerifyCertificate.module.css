@@ -1,0 +1,149 @@
+.grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.left { display: flex; flex-direction: column; }
+.right { display: flex; flex-direction: column; }
+
+.tabs {
+  display: flex;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: none;
+  overflow: hidden;
+}
+.tab {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--text-3);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: all 0.15s;
+  border-bottom: 2px solid transparent;
+}
+.tab:hover { color: var(--text-2); background: var(--navy-3); }
+.activeTab {
+  color: var(--accent);
+  background: var(--navy-3);
+  border-bottom-color: var(--accent);
+}
+
+/* Dropzone */
+.dropzone {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+  background: var(--navy-2);
+}
+.dropzone:hover, .dropzoneActive { background: var(--accent-glow); }
+.dropzoneActive { border-color: var(--accent); }
+.dropzoneHasFile { cursor: default; }
+
+.dropPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 32px;
+  text-align: center;
+  pointer-events: none;
+}
+.dropIcon {
+  font-size: 36px;
+  color: var(--accent);
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+.dropTitle {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+.dropSub {
+  font-size: 12px;
+  color: var(--text-3);
+}
+.dropBrowse {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.fileSelected {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  width: 100%;
+}
+.imgPreview {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.pdfIcon {
+  width: 80px; height: 80px;
+  background: var(--red-dim);
+  border: 1px solid rgba(255,79,106,0.3);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--red);
+  flex-shrink: 0;
+}
+.fileInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.fileName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fileSize {
+  font-size: 11px;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+}
+.removeBtn {
+  width: 28px; height: 28px;
+  background: var(--navy-4);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-3);
+  font-size: 12px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.removeBtn:hover { background: var(--red-dim); color: var(--red); border-color: var(--red); }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
