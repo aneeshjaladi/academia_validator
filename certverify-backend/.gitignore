@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Environment Variables
+.env
+.env.*
+
+# Generated files / uploads
+uploads/
+seed-output.txt
+*.log
+
+# Sensitive credentials
+google-vision-credentials.json
+*.pem
+*.key
+
+# Data files
+*.traineddata
+
+# OS generated files
+.DS_Store
+Thumbs.db
